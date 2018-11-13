@@ -1,6 +1,6 @@
 <?php
 //index.php
-//testgguy'gufgiug'fiuhiufhifhoi'jofi'j
+//ahauihiushuihsaiuhasiuahuiahau
 $error = '';
 $name = '';
 $email = '';
