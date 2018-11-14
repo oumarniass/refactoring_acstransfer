@@ -1,5 +1,4 @@
 <?php
-//index.php
 
 $error = '';
 $name = '';
@@ -61,23 +60,23 @@ if(isset($_POST["submit"]))
     {
         require 'class/class.phpmailer.php';
         $mail = new PHPMailer;
-        $mail->IsSMTP();								//Sets Mailer to send message using SMTP
-        $mail->Host = 'ssl://smtp.gmail.com';		//Sets the SMTP hosts of your Email hosting, this for Godaddy
-        $mail->Port = '465';								//Sets the default SMTP server port
-        $mail->SMTPAuth = true;							//Sets SMTP authentication. Utilizes the Username and Password variables
-        $mail->Username = 'exemple@exemple.com';					//Sets SMTP username
-        $mail->Password = '********';					//Sets SMTP password
-        $mail->SMTPSecure = '';							//Sets connection prefix. Options are "", "ssl" or "tls"
-        $mail->From = $_POST["email"];					//Sets the From email address for the message
-        $mail->FromName = $_POST["name"];				//Sets the From name of the message
-        $mail->AddAddress('abc@xyz.com', 'Name');		//Adds a "To" address
-        $mail->AddCC($_POST["email"], $_POST["name"]);	//Adds a "Cc" address
+        $mail->IsSMTP();
+        $mail->Host = 'ssl://smtp.gmail.com';
+        $mail->Port = '465';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'oumar@exemple.com';
+        $mail->Password = '********';
+        $mail->SMTPSecure = '';
+        $mail->From = $_POST["email"];
+        $mail->FromName = $_POST["name"];
+        $mail->AddAddress('abc@xyz.com', 'Name');
+        $mail->AddCC($_POST["email"], $_POST["name"]);
         $mail->addAttachment($_FILES['fichier']['tmp_name']);
-        $mail->WordWrap = 50;							//Sets word wrapping on the body of the message to a given number of characters
-        $mail->IsHTML(true);							//Sets message type to HTML
-        $mail->Subject = $_POST["subject"];				//Sets the Subject of the message
-        $mail->Body = $_POST["message"];				//An HTML or plain text message body
-        if($mail->Send())								//Send an Email. Return true on success or false on error
+        $mail->WordWrap = 50;
+        $mail->IsHTML(true);
+        $mail->Subject = $_POST["subject"];
+        $mail->Body = $_POST["message"];
+        if($mail->Send())
         {
             $error = '<label class="text-success">Votre message a été délivrer avec succés</label>';
         }
