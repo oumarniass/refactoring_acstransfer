@@ -1,0 +1,4 @@
+************************************** Groupe 5 **************************************
+
+D'abord nous avons confectionner un wireframe, une maquette pour notre page d'accueil
+et un formulaire permettant de transférer du texte, des fichiers et des images sans url. 
