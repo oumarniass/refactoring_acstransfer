@@ -1,34 +1,16 @@
+<?php require 'index.php';?>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
 <?php
-//require '/usr/share/php/libphp-phpmailer/class.phpmailer.php';
-//require '/usr/share/php/libphp-phpmailer/class.smtp.php';
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-require 'path/to/PHPMailer/src/Exception.php';
-require 'path/to/PHPMailer/src/PHPMailer.php';
-require 'path/to/PHPMailer/src/SMTP.php';
-$mail = new PHPMailer;
-$mail->setFrom('admin@example.com');
-$mail->addAddress('oumarsow92bbsy@gmail.com');
-$mail->Subject = 'Message sent by PHPMailer';
-$mail->Body = 'Hello! use PHPMailer to send email using PHP';
-$mail->IsSMTP();
-$mail->SMTPSecure = 'ssl';
-$mail->Host = 'ssl://smtp.gmail.com';
-$mail->SMTPAuth = true;
-$mail->Port = 465;
-
-//Set your existing gmail address as user name
-$mail->Username = 'oumarsow92bbsy@gmail.com';
-
-
-//Set the password of your gmail address here
-$mail->Password = 'oumarsow83bbsy';
-if(!$mail->send()) {
-    echo 'Email is not sent.';
-    echo 'Email error: ' . $mail->ErrorInfo;
-} else {
-    echo 'Email has been sent.';
-}
+$_FILES['fichier']['name'];
 ?>
-<a href=""></a>
+</body>
+</html>

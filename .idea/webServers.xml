@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="93a736ec-0c69-49c9-bc65-3f7fc48e0b71" name="acs_transfer" url="http://promo-21.codeur.online">
+        <fileTransfer host="promo-21.codeur.online" port="22" rootFolder="/public/acs_transfer" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

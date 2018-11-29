@@ -1,10 +1,8 @@
 <?php
-session_start();
-$_SESSION['fichier'];
+require 'test.php';
+var_dump($_FILES['fichier']['name']);
 
-
-
-    ?>
+?>
 <!doctype html>
 <html lang="fr">
 <head>
@@ -26,9 +24,9 @@ $_SESSION['fichier'];
         </div>
         <h6 class="display-4" style="color: white !important; text-shadow: 0px 0px 2px #131415" >Bonjour cliquez sur le bouton pour le télécharger le fichier</h6><br>
         <p class="lead">
-          <!--  <a class="btn btn-primary btn-lg align" href="http://localhost/Wetransfer/files/'.<?$_SESSION['fichier']?>.'" role="button">Telecharger</a>-->
+          <!--  <a class="btn btn-primary btn-lg align" href="http://localhost/Wetransfer/files/''" role="button">Telecharger</a>-->
             <?php
-            echo '<a  class="btn btn-primary btn-lg" href="http://localhost/Wetransfer/files/'.$_SESSION['fichier'].'">telecharger</a>';
+            echo '<a  class="btn btn-primary btn-lg" href="http://oumars.promo-21.codeur.online/acs_transfer/files/'.$_FILES['fichier']['name'].'">telecharger</a>';
             ?>
         </p>
         <p class="modal-footer" style="color: white !important; text-shadow: 0px 0px 2px #131415; margin-top: 100px !important;">Ce fichier est disponible pour 7 jours </p>
