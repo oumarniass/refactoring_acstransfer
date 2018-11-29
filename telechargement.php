@@ -1,5 +1,5 @@
 <?php
-require 'test.php';
+
 var_dump($_FILES['fichier']['name']);
 
 ?>
