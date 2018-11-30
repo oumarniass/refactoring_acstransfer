@@ -1,14 +1,19 @@
 <?php
-
-var_dump($_FILES['fichier']['name']);
+require 'connexion.php';
+var_dump($download);
+$download = $_FILES['fichier']['name'];
+$requete = $bdd->prepare('SELECT MAX(file_url) FROM files where name = ?');
+$requete->execute();
+$result=$requete->fetch();
+var_dump($result);
 
 ?>
 <!doctype html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>Document</title>
@@ -26,7 +31,7 @@ var_dump($_FILES['fichier']['name']);
         <p class="lead">
           <!--  <a class="btn btn-primary btn-lg align" href="http://localhost/Wetransfer/files/''" role="button">Telecharger</a>-->
             <?php
-            echo '<a  class="btn btn-primary btn-lg" href="http://oumars.promo-21.codeur.online/acs_transfer/files/'.$_FILES['fichier']['name'].'">telecharger</a>';
+            echo '<a  class="btn btn-primary btn-lg" href="http://oumars.promo-21.codeur.online/acs_transfer/files/'.$result.'">telecharger</a>';
             ?>
         </p>
         <p class="modal-footer" style="color: white !important; text-shadow: 0px 0px 2px #131415; margin-top: 100px !important;">Ce fichier est disponible pour 7 jours </p>
